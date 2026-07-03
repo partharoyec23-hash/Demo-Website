@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>GreenTech MRF Solutions | Material Recovery Facility Experts</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+
+  :root {
+    --green-dark: #1A4D2E;
+    --green-mid: #2E7D52;
+    --green-light: #4CAF50;
+    --mint: #E8F5E9;
+    --mint2: #C8E6C9;
+    --gold: #F5A623;
+    --white: #FFFFFF;
+    --gray-dark: #1C1C1C;
+    --gray-mid: #555555;
+    --gray-light: #F5F5F5;
+    --border: #D0E8D8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--gray-dark);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(26,77,46,0.97);
+    backdrop-filter: blur(10px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 70px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .nav-logo-icon {
+    width: 38px; height: 38px;
+    background: var(--gold);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 800; color: var(--green-dark);
+  }
+
+  .nav-logo-text { color: white; }
+  .nav-logo-text span { display: block; }
+  .nav-logo-text .brand { font-size: 15px; font-weight: 700; letter-spacing: 0.5px; }
+  .nav-logo-text .tagline { font-size: 10px; color: var(--mint2); letter-spacing: 1px; text-transform: uppercase; }
+
+  .nav-links {
+    display: flex; align-items: center; gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--mint2); text-decoration: none;
+    font-size: 13px; font-weight: 500; letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--green-dark) !important;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 700 !important;
+    transition: opacity 0.2s !important;
+  }
+
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0D2E1A 0%, #1A4D2E 40%, #2E7D52 100%);
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding-top: 70px;
+  }
+
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(76,175,80,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(245,166,35,0.06) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  .hero-grid-lines {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image:
+      repeating-linear-gradient(0deg, white 0px, white 1px, transparent 1px, transparent 80px),
+      repeating-linear-gradient(90deg, white 0px, white 1px, transparent 1px, transparent 80px);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1200px; margin: 0 auto; padding: 80px 5%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    position: relative; z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(245,166,35,0.15);
+    border: 1px solid rgba(245,166,35,0.3);
+    color: var(--gold);
+    padding: 6px 14px; border-radius: 100px;
+    font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; margin-bottom: 24px;
+  }
+
+  .hero-badge span { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; display: inline-block; }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 800; color: white; line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .hero-title .accent { color: var(--gold); }
+
+  .hero-desc {
+    font-size: 16px; color: rgba(255,255,255,0.75);
+    line-height: 1.8; margin-bottom: 36px; max-width: 480px;
+  }
+
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--gold); color: var(--green-dark);
+    padding: 14px 28px; border-radius: 8px;
+    font-weight: 700; font-size: 14px; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,166,35,0.4); }
+
+  .btn-secondary {
+    background: transparent; color: white;
+    padding: 14px 28px; border-radius: 8px;
+    font-weight: 600; font-size: 14px; text-decoration: none;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    transition: border-color 0.2s, background 0.2s;
+    display: inline-block;
+  }
+
+  .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.08); }
+
+  .hero-stats {
+    display: flex; gap: 32px; margin-top: 48px;
+    padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .hero-stat-num {
+    font-size: 32px; font-weight: 800; color: var(--gold); line-height: 1;
+  }
+
+  .hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+  /* Right side - machine card */
+  .hero-visual {
+    display: flex; flex-direction: column; gap: 16px;
+  }
+
+  .machine-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px; padding: 24px;
+    backdrop-filter: blur(10px);
+  }
+
+  .machine-card-title {
+    color: var(--gold); font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px;
+  }
+
+  .machine-list { display: flex; flex-direction: column; gap: 12px; }
+
+  .machine-item {
+    display: flex; align-items: center; gap: 12px;
+  }
+
+  .machine-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--green-light); flex-shrink: 0;
+  }
+
+  .machine-item span { font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 500; }
+
+  .compliance-badge {
+    background: rgba(76,175,80,0.15);
+    border: 1px solid rgba(76,175,80,0.3);
+    border-radius: 12px; padding: 16px 20px;
+    display: flex; align-items: center; gap: 14px;
+  }
+
+  .compliance-icon { font-size: 28px; }
+
+  .compliance-text { color: var(--mint2); font-size: 13px; line-height: 1.5; }
+  .compliance-text strong { color: white; display: block; font-size: 14px; margin-bottom: 2px; }
+
+  /* ── SECTIONS COMMON ── */
+  section { padding: 80px 5%; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--green-mid);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800; color: var(--green-dark); line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .section-desc { font-size: 16px; color: var(--gray-mid); line-height: 1.8; max-width: 600px; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--mint); }
+
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    margin-top: 48px;
+  }
+
+  .about-text p {
+    font-size: 15px; color: var(--gray-mid); line-height: 1.9; margin-bottom: 16px;
+  }
+
+  .about-points { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+
+  .about-point {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: white; border-radius: 10px; padding: 14px 16px;
+    border-left: 3px solid var(--green-mid);
+  }
+
+  .about-point-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .about-point-text { font-size: 14px; color: var(--gray-dark); font-weight: 500; }
+  .about-point-text span { display: block; font-size: 12px; color: var(--gray-mid); font-weight: 400; margin-top: 2px; }
+
+  .about-right { display: flex; flex-direction: column; gap: 16px; }
+
+  .about-stat-card {
+    background: var(--green-dark); border-radius: 16px; padding: 28px;
+    display: flex; gap: 20px; align-items: center;
+  }
+
+  .about-stat-num { font-size: 42px; font-weight: 800; color: var(--gold); line-height: 1; }
+  .about-stat-label { font-size: 13px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+  .about-swachh {
+    background: white; border-radius: 16px; padding: 24px;
+    border: 2px solid var(--border); text-align: center;
+  }
+
+  .about-swachh h4 { color: var(--green-dark); font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .about-swachh p { font-size: 13px; color: var(--gray-mid); line-height: 1.6; }
+
+  /* ── PRODUCTS ── */
+  #products { background: white; }
+
+  .products-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px; margin-top: 48px;
+  }
+
+  .product-card {
+    border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: white;
+  }
+
+  .product-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(26,77,46,0.12); }
+
+  .product-header {
+    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+    padding: 28px 24px 20px;
+    position: relative; overflow: hidden;
+  }
+
+  .product-header::after {
+    content: '';
+    position: absolute; bottom: -20px; right: -20px;
+    width: 80px; height: 80px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+
+  .product-num {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 8px;
+  }
+
+  .product-name { font-size: 18px; font-weight: 700; color: white; line-height: 1.3; }
+
+  .product-tag {
+    display: inline-block; margin-top: 10px;
+    background: rgba(245,166,35,0.2); color: var(--gold);
+    font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 100px;
+  }
+
+  .product-body { padding: 20px 24px 24px; }
+
+  .product-desc { font-size: 13px; color: var(--gray-mid); line-height: 1.7; margin-bottom: 16px; }
+
+  .product-specs { display: flex; flex-direction: column; gap: 8px; }
+
+  .spec-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 7px 0; border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+
+  .spec-row:last-child { border-bottom: none; }
+  .spec-label { color: var(--gray-mid); font-weight: 500; }
+  .spec-value { color: var(--green-dark); font-weight: 600; }
+
+  /* ── SERVICES ── */
+  #services { background: var(--green-dark); }
+  #services .section-eyebrow { color: var(--gold); }
+  #services .section-title { color: white; }
+  #services .section-desc { color: rgba(255,255,255,0.65); }
+
+  .services-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 24px; margin-top: 48px;
+  }
+
+  .service-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px; padding: 32px;
+    position: relative; overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .service-card:hover { background: rgba(255,255,255,0.1); }
+
+  .service-number {
+    font-size: 60px; font-weight: 800;
+    color: rgba(245,166,35,0.15);
+    position: absolute; top: 16px; right: 24px;
+    line-height: 1; font-family: 'Playfair Display', serif;
+  }
+
+  .service-icon { font-size: 32px; margin-bottom: 16px; }
+
+  .service-title { font-size: 18px; font-weight: 700; color: white; margin-bottom: 12px; }
+
+  .service-desc { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.8; }
+
+  /* ── CLIENTS ── */
+  #clients { background: var(--gray-light); }
+
+  .clients-split {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px;
+  }
+
+  .client-type {
+    background: white; border-radius: 16px; padding: 32px;
+    border: 1.5px solid var(--border);
+  }
+
+  .client-type-header {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
+    padding-bottom: 16px; border-bottom: 2px solid var(--border);
+  }
+
+  .client-type-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+
+  .govt-icon { background: linear-gradient(135deg, #1A4D2E, #2E7D52); }
+  .pvt-icon { background: linear-gradient(135deg, #1565C0, #1976D2); }
+
+  .client-type-title { font-size: 18px; font-weight: 700; color: var(--green-dark); }
+  .client-type-sub { font-size: 12px; color: var(--gray-mid); margin-top: 2px; }
+
+  .client-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .client-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 8px;
+    background: var(--mint); font-size: 13px;
+    color: var(--gray-dark); font-weight: 500;
+  }
+
+  .client-item::before {
+    content: '✓'; color: var(--green-mid);
+    font-weight: 700; flex-shrink: 0;
+  }
+
+  .compliance-strip {
+    margin-top: 40px; background: var(--green-dark);
+    border-radius: 16px; padding: 32px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center;
+  }
+
+  .comp-item { }
+  .comp-item .icon { font-size: 28px; margin-bottom: 10px; }
+  .comp-item h4 { color: var(--gold); font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .comp-item p { color: rgba(255,255,255,0.65); font-size: 12px; line-height: 1.6; }
+
+  /* ── WHY US ── */
+  #why { background: white; }
+
+  .why-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; margin-top: 48px;
+  }
+
+  .why-card {
+    padding: 32px 24px; border-radius: 16px;
+    border: 1.5px solid var(--border);
+    text-align: center;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .why-card:hover { border-color: var(--green-mid); transform: translateY(-4px); }
+
+  .why-card-icon {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: var(--mint); display: flex; align-items: center;
+    justify-content: center; font-size: 26px; margin: 0 auto 16px;
+  }
+
+  .why-card h4 { font-size: 16px; font-weight: 700; color: var(--green-dark); margin-bottom: 10px; }
+  .why-card p { font-size: 13px; color: var(--gray-mid); line-height: 1.7; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--mint); }
+
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; margin-top: 48px;
+  }
+
+  .contact-info { display: flex; flex-direction: column; gap: 20px; }
+
+  .contact-card {
+    background: white; border-radius: 14px; padding: 20px 24px;
+    border-left: 4px solid var(--green-mid);
+    display: flex; align-items: flex-start; gap: 16px;
+  }
+
+  .contact-card-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+  .contact-card h4 { font-size: 13px; font-weight: 600; color: var(--green-mid); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .contact-card p { font-size: 14px; color: var(--gray-dark); line-height: 1.6; }
+
+  .contact-form-wrap {
+    background: white; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 30px rgba(26,77,46,0.08);
+  }
+
+  .contact-form-wrap h3 { font-size: 20px; font-weight: 700; color: var(--green-dark); margin-bottom: 24px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-group { margin-bottom: 16px; }
+
+  .form-group label {
+    display: block; font-size: 12px; font-weight: 600;
+    color: var(--gray-mid); text-transform: uppercase; letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; padding: 11px 14px;
+    border: 1.5px solid var(--border); border-radius: 8px;
+    font-size: 14px; font-family: 'Inter', sans-serif;
+    color: var(--gray-dark); background: var(--gray-light);
+    outline: none; transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--green-mid); background: white; }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    width: 100%; padding: 14px;
+    background: var(--green-dark); color: white;
+    border: none; border-radius: 8px;
+    font-size: 15px; font-weight: 700; cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .form-submit:hover { background: var(--green-mid); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0D2219; color: rgba(255,255,255,0.6);
+    padding: 40px 5%;
+  }
+
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 20px;
+  }
+
+  .footer-logo { display: flex; align-items: center; gap: 10px; }
+  .footer-logo-icon {
+    width: 32px; height: 32px; background: var(--gold); border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; color: var(--green-dark); font-size: 14px;
+  }
+
+  .footer-brand { color: white; font-weight: 700; font-size: 14px; }
+  .footer-sub { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; }
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 4%; }
+    .nav-links { display: none; }
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 60px 4% 40px; }
+    .hero-visual { display: none; }
+    .about-grid, .services-grid, .clients-split, .contact-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .compliance-strip { grid-template-columns: 1fr; }
+    .hero-stats { flex-wrap: wrap; gap: 20px; }
+    .footer-inner { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">G</div>
+    <div class="nav-logo-text">
+      <span class="brand">GreenTech MRF Solutions</span>
+      <span class="tagline">Material Recovery Experts</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#contact" class="nav-cta">Get Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><span></span>Swachh Bharat Mission Aligned</div>
+      <h1 class="hero-title">
+        Building India's<br/>
+        <span class="accent">Cleaner Future</span><br/>
+        with MRF Technology
+      </h1>
+      <p class="hero-desc">
+        We supply, install, and commission advanced Material Recovery Facility (MRF) machinery for Urban Local Bodies and private sector clients across Northeast India — enabling efficient waste sorting, recycling, and environmental compliance.
+      </p>
+      <div class="hero-btns">
+        <a href="#products" class="btn-primary">Explore Machinery</a>
+        <a href="#contact" class="btn-secondary">Request Consultation</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">10+</div>
+          <div class="hero-stat-label">TPD Capacity Systems</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">SWM Rules 2016 Compliant</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">Govt</div>
+          <div class="hero-stat-label">& Private Sector Clients</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="machine-card">
+        <div class="machine-card-title">Our Machinery Range</div>
+        <div class="machine-list">
+          <div class="machine-item"><div class="machine-dot"></div><span>Trommel Screen Machine (10 TPD)</span></div>
+          <div class="machine-item"><div class="machine-dot"></div><span>Feeding Belt Conveyor System</span></div>
+          <div class="machine-item"><div class="machine-dot"></div><span>Rejection Belt Conveyor</span></div>
+          <div class="machine-item"><div class="machine-dot"></div><span>Plastic Waste Shredder Machine</span></div>
+          <div class="machine-item"><div class="machine-dot"></div><span>Hydraulic Baling Machine</span></div>
+          <div class="machine-item"><div class="machine-dot"></div><span>Incinerator System (Diesel Burn)</span></div>
+          <div class="machine-item"><div class="machine-dot"></div><span>Municipal Solid Waste Sorting Plant</span></div>
+        </div>
+      </div>
+      <div class="compliance-badge">
+        <div class="compliance-icon">🏛️</div>
+        <div class="compliance-text">
+          <strong>Government Approved Supply Partner</strong>
+          Serving Urban Local Bodies (ULBs) under SWM Rules, 2016
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-eyebrow">Who We Are</div>
+    <h2 class="section-title">Northeast India's Trusted<br/>MRF Machinery Partner</h2>
+    <p class="section-desc">GreenTech MRF Solutions specializes in end-to-end establishment, commissioning, and installation of machinery for Material Recovery Facilities across Assam and Northeast India.</p>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>We work alongside Urban Local Bodies (ULBs) and private organizations to build efficient, legally compliant waste processing infrastructure. Our solutions align with the Solid Waste Management Rules, 2016 — helping communities divert waste from landfills and maximize recyclable material recovery.</p>
+        <p>From planning and capacity assessment to daily operational support, we deliver end-to-end MRF solutions that are built to last and optimized for the waste profile of each site.</p>
+        <div class="about-points">
+          <div class="about-point">
+            <div class="about-point-icon">⚙️</div>
+            <div class="about-point-text">End-to-End Turnkey Solutions<span>From site planning to operational handover</span></div>
+          </div>
+          <div class="about-point">
+            <div class="about-point-icon">🏛️</div>
+            <div class="about-point-text">Government & Private Sector Experience<span>Proven track record with ULBs and industry</span></div>
+          </div>
+          <div class="about-point">
+            <div class="about-point-icon">♻️</div>
+            <div class="about-point-text">SWM Rules 2016 Compliant Machinery<span>All equipment meets national regulatory standards</span></div>
+          </div>
+          <div class="about-point">
+            <div class="about-point-icon">📍</div>
+            <div class="about-point-text">Northeast India Focus<span>Local expertise with on-ground support</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="about-stat-card">
+          <div>
+            <div class="about-stat-num">Sonari</div>
+            <div class="about-stat-label">MRF Site — Completed Project</div>
+          </div>
+          <div style="flex:1; text-align:right; color:rgba(255,255,255,0.5); font-size:13px; line-height:1.6;">
+            Conveyor belts, Trommel, Baling system — fully commissioned and operational.
+          </div>
+        </div>
+        <div class="about-swachh">
+          <div style="font-size:36px; margin-bottom:10px;">🇮🇳</div>
+          <h4>Aligned with Swachh Bharat Mission</h4>
+          <p>Our work directly contributes to India's national goal of clean, scientifically managed solid waste processing in every Urban Local Body.</p>
+        </div>
+        <div style="background: var(--green-dark); border-radius:16px; padding:24px; color:white;">
+          <p style="font-size:13px; color:rgba(255,255,255,0.7); line-height:1.7;">
+            "MRFs are not merely processing infrastructure — they are the cornerstone of a scientifically managed, legally compliant, and economically viable solid waste management system."
+          </p>
+          <p style="font-size:12px; color:var(--gold); margin-top:10px; font-weight:600;">— SWM Framework, 2016</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-inner">
+    <div class="section-eyebrow">Our Machinery</div>
+    <h2 class="section-title">Industrial-Grade MRF Equipment</h2>
+    <p class="section-desc">We supply, install, and commission a complete range of waste processing machinery — engineered for reliable performance in real-world MRF environments.</p>
+
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-header">
+          <div class="product-num">Machine 01</div>
+          <div class="product-name">Trommel Screen Machine</div>
+          <span class="product-tag">Primary Screening</span>
+        </div>
+        <div class="product-body">
+          <p class="product-desc">Efficiently separates mixed material streams through rotational screening, improving recovery quality and downstream sorting performance.</p>
+          <div class="product-specs">
+            <div class="spec-row"><span class="spec-label">Capacity</span><span class="spec-value">10 TPD / 10 TPH</span></div>
+            <div class="spec-row"><span class="spec-label">Screen Diameter</span><span class="spec-value">1600 mm</span></div>
+            <div class="spec-row"><span class="spec-label">Motor</span><span class="spec-value">5 HP (2 Nos) — 1 Year Warranty</span></div>
+            <div class="spec-row"><span class="spec-label">Type</span><span class="spec-value">Rotary — Heavy Duty Fabricated</span></div>
+            <div class="spec-row"><span class="spec-label">Gear Box</span><span class="spec-value">25:1 — 1 Year Warranty</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-header">
+          <div class="product-num">Machine 02</div>
+          <div class="product-name">Feeding Belt Conveyor System</div>
+          <span class="product-tag">Material Transport</span>
+        </div>
+        <div class="product-body">
+          <p class="product-desc">Inclined conveyor system that elevates and transports mixed dry waste from tipping floor to elevated sorting platform — the backbone of MRF operations.</p>
+          <div class="product-specs">
+            <div class="spec-row"><span class="spec-label">Belt Width</span><span class="spec-value">900 mm</span></div>
+            <div class="spec-row"><span class="spec-label">Conveyor Length</span><span class="spec-value">10,000 mm</span></div>
+            <div class="spec-row"><span class="spec-label">Motor</span><span class="spec-value">7 HP — ISI Certified</span></div>
+            <div class="spec-row"><span class="spec-label">Frame</span><span class="spec-value">Heavy-Duty Mild Steel (M.S.)</span></div>
+            <div class="spec-row"><span class="spec-label">Footprint</span><span class="spec-value">20 × 2 × 2.5 m</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-header">
+          <div class="product-num">Machine 03</div>
+          <div class="product-name">Rejection Belt Conveyor</div>
+          <span class="product-tag">Waste Handling</span>
+        </div>
+        <div class="product-body">
+          <p class="product-desc">Essential material-handling system designed to support efficient segregation and controlled movement of rejected waste within the MRF workflow.</p>
+          <div class="product-specs">
+            <div class="spec-row"><span class="spec-label">Belt Width</span><span class="spec-value">800 mm</span></div>
+            <div class="spec-row"><span class="spec-label">Conveyor Length</span><span class="spec-value">5,000 mm</span></div>
+            <div class="spec-row"><span class="spec-label">Motor</span><span class="spec-value">5 HP</span></div>
+            <div class="spec-row"><span class="spec-label">Design Focus</span><span class="spec-value">Reliability & Durability</span></div>
+            <div class="spec-row"><span class="spec-label">Blower</span><span class="spec-value">1 No. — 5 HP Motor</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-header">
+          <div class="product-num">Machine 04</div>
+          <div class="product-name">Plastic Waste Shredder Machine</div>
+          <span class="product-tag">Size Reduction</span>
+        </div>
+        <div class="product-body">
+          <p class="product-desc">Industrial shredder for heavy-duty recycling of plastic bottles, wood, rubber, and cardboard — reducing waste into manageable granules for further processing.</p>
+          <div class="product-specs">
+            <div class="spec-row"><span class="spec-label">Model RE 12"</span><span class="spec-value">25 Kg/Hr | 3 HP</span></div>
+            <div class="spec-row"><span class="spec-label">Model RE 16"</span><span class="spec-value">400 Kg/Day | 7+2 HP</span></div>
+            <div class="spec-row"><span class="spec-label">No. of Blades</span><span class="spec-value">5 per set (2 Rotating, 3 Fixed)</span></div>
+            <div class="spec-row"><span class="spec-label">Duty Cycle</span><span class="spec-value">Continuous</span></div>
+            <div class="spec-row"><span class="spec-label">Rate (RE 12")</span><span class="spec-value">₹9,29,000/-</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-header">
+          <div class="product-num">Machine 05</div>
+          <div class="product-name">Hydraulic Baling Machine</div>
+          <span class="product-tag">Waste Compaction</span>
+        </div>
+        <div class="product-body">
+          <p class="product-desc">Vertical hydraulic baling press that compacts recyclables like cardboard, plastics, and metals into dense, manageable bales for transport and market dispatch.</p>
+          <div class="product-specs">
+            <div class="spec-row"><span class="spec-label">Max Pressing Capacity</span><span class="spec-value">15 Ton (80×56)</span></div>
+            <div class="spec-row"><span class="spec-label">Bale Size</span><span class="spec-value">450L × 450W × 600HT (Approx)</span></div>
+            <div class="spec-row"><span class="spec-label">Motor</span><span class="spec-value">3 HP — 4 Pole 1440 RPM (Hindustan)</span></div>
+            <div class="spec-row"><span class="spec-label">Hydraulic Stroke</span><span class="spec-value">900 mm</span></div>
+            <div class="spec-row"><span class="spec-label">Oil Tank Capacity</span><span class="spec-value">30 Litres</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-header">
+          <div class="product-num">Machine 06</div>
+          <div class="product-name">Incinerator System (Diesel Burn)</div>
+          <span class="product-tag">Waste Treatment</span>
+        </div>
+        <div class="product-body">
+          <p class="product-desc">Twin-chamber diesel fuel incinerator for bio-medical solid waste treatment, compliant with Bio-Medical Waste Management and Handling Rules, 2016.</p>
+          <div class="product-specs">
+            <div class="spec-row"><span class="spec-label">Model</span><span class="spec-value">IS – SBW -10</span></div>
+            <div class="spec-row"><span class="spec-label">Capacity</span><span class="spec-value">10 KG/Cycle</span></div>
+            <div class="spec-row"><span class="spec-label">Chimney Height</span><span class="spec-value">30 Meters (100 FT)</span></div>
+            <div class="spec-row"><span class="spec-label">Primary Chamber</span><span class="spec-value">800°C</span></div>
+            <div class="spec-row"><span class="spec-label">Secondary Chamber</span><span class="spec-value">1200°C</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-eyebrow">What We Do</div>
+    <h2 class="section-title">End-to-End MRF Project Services</h2>
+    <p class="section-desc">From the first site survey to daily operational management — we handle every phase of your Material Recovery Facility project.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-number">01</div>
+        <div class="service-icon">📋</div>
+        <div class="service-title">Planning & Capacity Assessment</div>
+        <div class="service-desc">We conduct baseline surveys, waste characterisation studies, and future volume projections to correctly size your MRF for current and near-future requirements. Every project begins with data-driven planning.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <div class="service-icon">🏗️</div>
+        <div class="service-title">Construction & Commissioning</div>
+        <div class="service-desc">We prepare detailed design drawings and cost estimates, then manage civil construction and full machinery installation — conveyor belts, sorting platforms, baling units, and all ancillary infrastructure for complete operationalisation.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <div class="service-icon">⚙️</div>
+        <div class="service-title">Daily Operations Support</div>
+        <div class="service-desc">Once operational, we support dry waste segregation, mechanical sorting, and baling. Sorted recyclable fractions are dispatched to authorised recycling markets. Non-recyclable waste is stored for RDF processing or safe landfill disposal.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-number">04</div>
+        <div class="service-icon">📊</div>
+        <div class="service-title">Tracking & Monitoring</div>
+        <div class="service-desc">Systematic tracking of waste inflows, processing volumes, and outflows ensures accountability. We provide regular compliance reports to ULBs and relevant authorities — with digital data management for start/stop times and processing volumes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="section-inner">
+    <div class="section-eyebrow">Who We Serve</div>
+    <h2 class="section-title">Government & Private Sector Partners</h2>
+    <p class="section-desc">We work with Urban Local Bodies mandated under SWM Rules 2016, and private organizations building sustainable waste infrastructure.</p>
+
+    <div class="clients-split">
+      <div class="client-type">
+        <div class="client-type-header">
+          <div class="client-type-icon govt-icon">🏛️</div>
+          <div>
+            <div class="client-type-title">Government Sector</div>
+            <div class="client-type-sub">Urban Local Bodies & Municipal Authorities</div>
+          </div>
+        </div>
+        <div class="client-list">
+          <div class="client-item">Urban Local Bodies (ULBs)</div>
+          <div class="client-item">Municipal Corporations & Councils</div>
+          <div class="client-item">Town Committees & Panchayats</div>
+          <div class="client-item">State Government Projects (SWM)</div>
+          <div class="client-item">Swachh Bharat Mission Projects</div>
+          <div class="client-item">NITI Aayog Registered Bodies</div>
+        </div>
+      </div>
+      <div class="client-type">
+        <div class="client-type-header">
+          <div class="client-type-icon pvt-icon">🏭</div>
+          <div>
+            <div class="client-type-title">Private Sector</div>
+            <div class="client-type-sub">Industries, Hospitals & Organizations</div>
+          </div>
+        </div>
+        <div class="client-list">
+          <div class="client-item">Hospitals & Healthcare Facilities (BMW)</div>
+          <div class="client-item">Manufacturing & Industrial Plants</div>
+          <div class="client-item">Recycling Companies & Agencies</div>
+          <div class="client-item">Large Housing & Commercial Complexes</div>
+          <div class="client-item">Educational Institutions & Campuses</div>
+          <div class="client-item">Retail & Supermarket Chains</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="compliance-strip">
+      <div class="comp-item">
+        <div class="icon">📜</div>
+        <h4>SWM Rules 2016 Compliant</h4>
+        <p>All machinery and facility setups comply fully with Solid Waste Management Rules, 2016</p>
+      </div>
+      <div class="comp-item">
+        <div class="icon">🌱</div>
+        <h4>Bio-Medical Waste Rules</h4>
+        <p>Incinerator systems meet Bio-Medical Waste Management and Handling Rules standards</p>
+      </div>
+      <div class="comp-item">
+        <div class="icon">🏆</div>
+        <h4>CPCB Emission Standards</h4>
+        <p>All incineration systems meet Central Pollution Control Board emission norms</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-inner">
+    <div class="section-eyebrow">Why Choose Us</div>
+    <h2 class="section-title">The GreenTech Advantage</h2>
+    <p class="section-desc">We don't just supply machines — we build complete, operational MRF solutions that work in the real conditions of Northeast India.</p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-icon">🤝</div>
+        <h4>Turnkey Delivery</h4>
+        <p>From site planning to machinery installation to handover — one partner for every phase. No coordination gaps, no delays.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">📍</div>
+        <h4>Local Northeast Expertise</h4>
+        <p>We understand the waste profile, infrastructure, and regulatory environment specific to Assam and Northeast India.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">⚖️</div>
+        <h4>Full Regulatory Compliance</h4>
+        <p>Every system we install meets SWM Rules 2016, BMW Handling Rules, and CPCB emission standards — guaranteed.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">🔧</div>
+        <h4>ISI-Certified Equipment</h4>
+        <p>We use ISI-certified motors and components from trusted makes — Crompton, Havells, Jagruti, Western, and equivalent.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">📊</div>
+        <h4>Data-Driven Operations</h4>
+        <p>Digital tracking of machine start/stop times and processing volumes — full transparency for ULB reporting.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">♻️</div>
+        <h4>Environmental Mission</h4>
+        <p>Every facility we build diverts waste from landfills, generates livelihood for workers, and contributes to a cleaner India.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-eyebrow">Get In Touch</div>
+    <h2 class="section-title">Start Your MRF Project Today</h2>
+    <p class="section-desc">Ready to build a compliant, efficient Material Recovery Facility? Reach out for a free consultation and site assessment.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="contact-card-icon">📍</div>
+          <div>
+            <h4>Office Address</h4>
+            <p>GreenTech MRF Solutions<br/>GS Road, Bhangagarh<br/>Guwahati – 781005, Assam</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📞</div>
+          <div>
+            <h4>Phone</h4>
+            <p>+91 98765 43210<br/>+91 98765 43211 (WhatsApp)</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📧</div>
+          <div>
+            <h4>Email</h4>
+            <p>info@greentechmrf.in<br/>projects@greentechmrf.in</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">🕐</div>
+          <div>
+            <h4>Working Hours</h4>
+            <p>Monday – Saturday: 9:00 AM – 6:00 PM<br/>Sunday: By Appointment Only</p>
+          </div>
+        </div>
+        <div style="background: var(--green-dark); border-radius:14px; padding:20px 24px; color:white;">
+          <p style="font-size:13px; color:rgba(255,255,255,0.7); line-height:1.7; margin-bottom:12px;">We provide site visits across Assam and Northeast India. Contact us to schedule a free assessment of your MRF requirements.</p>
+          <p style="font-size:12px; color:var(--gold); font-weight:600;">✓ Free Site Assessment &nbsp; ✓ Detailed Quotation &nbsp; ✓ Full Technical Support</p>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <h3>Request a Free Consultation</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" placeholder="Full Name"/>
+          </div>
+          <div class="form-group">
+            <label>Organization *</label>
+            <input type="text" placeholder="ULB / Company Name"/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" placeholder="+91 XXXXX XXXXX"/>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="email@example.com"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Client Type *</label>
+          <select>
+            <option>Select Client Type</option>
+            <option>Urban Local Body (ULB)</option>
+            <option>Municipal Corporation</option>
+            <option>Hospital / Healthcare Facility</option>
+            <option>Private Industry</option>
+            <option>Other Government Body</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Machinery / Service Required</label>
+          <select>
+            <option>Select Requirement</option>
+            <option>Trommel Screen Machine</option>
+            <option>Conveyor Belt System</option>
+            <option>Plastic Waste Shredder</option>
+            <option>Hydraulic Baling Machine</option>
+            <option>Incinerator System</option>
+            <option>Complete MRF Setup (Turnkey)</option>
+            <option>Other / Custom Requirement</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Project Details / Message</label>
+          <textarea placeholder="Tell us about your project — location, capacity requirement, timeline, etc."></textarea>
+        </div>
+        <button class="form-submit">Send Enquiry →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <div class="footer-logo-icon">G</div>
+      <div>
+        <div class="footer-brand">GreenTech MRF Solutions</div>
+        <div class="footer-sub">Material Recovery Facility Experts</div>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#services">Services</a>
+      <a href="#clients">Clients</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026 GreenTech MRF Solutions, Guwahati. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
